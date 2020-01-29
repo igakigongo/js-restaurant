@@ -1,0 +1,9 @@
+linters:
+  eslint:
+    config: './.eslintrc.json'
+
+  stylelint:
+    fixer: true
+
+fixers:
+  enabled: true
