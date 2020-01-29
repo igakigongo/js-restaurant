@@ -6,6 +6,7 @@
     "crossorigin",
     "jubei",
     "linebreak",
+    "parens",
     "readonly",
     "stylelint"
   ]

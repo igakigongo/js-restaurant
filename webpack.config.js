@@ -1,4 +1,4 @@
-/* global __dirname, module, require */
+/* global __dirname, module */
 const path = require('path');
 
 module.exports = {
