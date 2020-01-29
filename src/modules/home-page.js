@@ -1,9 +1,9 @@
-const home = (function(){
+const home = (function loadHome() {
   const render = () => {};
 
   return {
-    render
+    render,
   };
-})();
+}());
 
 export default home;

@@ -1,9 +1,9 @@
-const menu = (function() {
+const menu = (function loadMenu() {
   const render = () => {};
 
   return {
-    render
+    render,
   };
-})();
+}());
 
 export default menu;

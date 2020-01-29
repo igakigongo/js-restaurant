@@ -1,9 +1,9 @@
-const contact = (function() {
+const contact = (function loadContact() {
   const render = () => {};
 
   return {
-    render
+    render,
   };
-})();
+}());
 
 export default contact;

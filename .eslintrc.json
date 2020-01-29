@@ -4,7 +4,9 @@
     "es6": true,
     "jest": true
   },
-  "extends": "eslint:recommended",
+  "extends": [
+    "airbnb-base"
+  ],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
@@ -17,22 +19,6 @@
     "no-shadow": "off",
     "no-param-reassign": "off",
     "eol-last": "off",
-    "arrow-parens": "off",
-    "indent": [
-      "error",
-      2
-    ],
-    "linebreak-style": [
-      "error",
-      "unix"
-    ],
-    "quotes": [
-      "error",
-      "single"
-    ],
-    "semi": [
-      "error",
-      "always"
-    ]
+    "arrow-parens": "off"
   }
 }

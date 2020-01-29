@@ -5,8 +5,7 @@ import menu from './modules/menu-page';
 /**
  * Handle all transitions from the index element
  */
-const navigation = (function() {
-
+const navigation = (function loadNavigation() {
   let navigationBar;
 
   const buildBrand = () => {
@@ -18,30 +17,28 @@ const navigation = (function() {
       return spanElement;
     });
 
-    const anchorElement =  document.createElement('a');
+    const anchorElement = document.createElement('a');
     anchorElement.append(...brandSpanElements);
     anchorElement.classList.add('navbar-brand');
     anchorElement.setAttribute('href', '#');
-    anchorElement.addEventListener('click', ()=>{});
+    anchorElement.addEventListener('click', () => {});
     return anchorElement;
   };
 
-  const buildNavLinks = () =>
-    ['Contact', 'Menu'].map(title => {
-      const anchorElement = document.createElement('a');
-      anchorElement.addEventListener('click', ()=>{});
-      anchorElement.classList.add('nav-link', 'text-white');
-      anchorElement.innerText = title;
-      anchorElement.setAttribute('href', '#');
+  const buildNavLinks = () => ['Contact', 'Menu'].map((title) => {
+    const anchorElement = document.createElement('a');
+    anchorElement.addEventListener('click', () => {});
+    anchorElement.classList.add('nav-link', 'text-white');
+    anchorElement.innerText = title;
+    anchorElement.setAttribute('href', '#');
 
-      const linkElement = document.createElement('li');
-      linkElement.classList.add('nav-item', 'mx-3', 'px-3');
-      linkElement.appendChild(anchorElement);
-      return linkElement;
-    });
+    const linkElement = document.createElement('li');
+    linkElement.classList.add('nav-item', 'mx-3', 'px-3');
+    linkElement.appendChild(anchorElement);
+    return linkElement;
+  });
 
-  const buildNavigationBar = () => 
-  {
+  const buildNavigationBar = () => {
     if (navigationBar) return navigationBar;
 
     // build if it is not yet built
@@ -66,37 +63,35 @@ const navigation = (function() {
     return header;
   };
 
-  /**
-	 * Renders the navigation menu on page load
-	 */
+  // Renders the navigation menu on page load
   const render = () => document.body.appendChild(buildNavigationBar());
 
   // eslint-disable-next-line no-unused-vars
-  function renderToMain(evt){
+  function renderToMain(evt) {
     evt.preventDefault();
     const name = evt.target.innerText.toLowerCase();
     let handlerModule;
-    
-    switch(name){
-    case 'contact':
-      handlerModule = contact;
-      break;
 
-    case 'menu':
-      handlerModule = menu;
-      break;
+    switch (name) {
+      case 'contact':
+        handlerModule = contact;
+        break;
 
-    default:
-      handlerModule = home;
-      break;
+      case 'menu':
+        handlerModule = menu;
+        break;
+
+      default:
+        handlerModule = home;
+        break;
     }
-    
+
     if (handlerModule) handlerModule.render();
   }
 
   return {
-    render
+    render,
   };
-})();
+}());
 
 document.addEventListener('DOMContentLoaded', navigation.render);
