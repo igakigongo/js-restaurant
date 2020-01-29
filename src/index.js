@@ -1,6 +1,6 @@
-// import contact from './modules/contact-page';
-// import home from './modules/home-page';
-// import menu from './modules/menu-page';
+import contact from './modules/contact-page';
+import home from './modules/home-page';
+import menu from './modules/menu-page';
 
 /**
  * Handle all transitions from the index element
@@ -71,27 +71,28 @@ const navigation = (function() {
 	 */
   const render = () => document.body.appendChild(buildNavigationBar());
 
-  // function renderToMain(evt){
-  //   evt.preventDefault();
-  //   const name = evt.target.innerText.toLowerCase();
-  //   let handlerModule;
+  // eslint-disable-next-line no-unused-vars
+  function renderToMain(evt){
+    evt.preventDefault();
+    const name = evt.target.innerText.toLowerCase();
+    let handlerModule;
     
-  //   switch(name){
-  //   case 'contact':
-  //     handlerModule = contact;
-  //     break;
+    switch(name){
+    case 'contact':
+      handlerModule = contact;
+      break;
 
-  //   case 'menu':
-  //     handlerModule = menu;
-  //     break;
+    case 'menu':
+      handlerModule = menu;
+      break;
 
-  //   default:
-  //     handlerModule = home;
-  //     break;
-  //   }
+    default:
+      handlerModule = home;
+      break;
+    }
     
-  //   if (handlerModule) handlerModule.render();
-  // }
+    if (handlerModule) handlerModule.render();
+  }
 
   return {
     render
