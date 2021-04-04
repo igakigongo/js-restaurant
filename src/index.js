@@ -1,6 +1,7 @@
 import contact from './modules/contact-page';
 import home from './modules/home-page';
 import menu from './modules/menu-page';
+import './app.css';
 
 /**
  * Handle all transitions from the index element
